@@ -1,0 +1,22 @@
+{
+  "name": "resteasy",
+  "version": "1.0.0",
+  "description": "REST API npm package",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dr-offig/resteasy.git"
+  },
+  "keywords": [
+    "REST"
+  ],
+  "author": "dr.offig@offig.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dr-offig/resteasy/issues"
+  },
+  "homepage": "https://github.com/dr-offig/resteasy#readme"
+}
