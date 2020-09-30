@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/dr-offig/resteasy/issues"
   },
-  "homepage": "https://github.com/dr-offig/resteasy#readme"
+  "homepage": "https://github.com/dr-offig/resteasy#readme",
+  "dependencies": {
+    "jsondom": "^0.4.1"
+  }
 }
