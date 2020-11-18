@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/dr-offig/resteasy#readme",
   "dependencies": {
-    "jsondom": "^0.4.1"
+    "jsondom": "^0.4.1",
+    "node-fetch": "^2.6.1"
   }
 }
