@@ -32,6 +32,31 @@ let get = (path, action=console.log, extraHeaders={}) => {
 }
 
 
+let saveStream = (path, localPath, extraHeaders={}) => {
+    if (APIspec.baseUrl === undefined) {
+      console.log("You need to specify an API (and probably a token) using the loadSpec function.");
+      return;
+    }
+    let headers = extraHeaders;
+    headers[APIspec.tokenName] = APIspec.token;
+    let options = {
+      'method': 'GET',
+      'headers': headers
+    }
+
+    let url = APIspec.baseUrl + path
+    console.log(url)
+    console.log(options);
+
+  fetch(url, options)
+  .then(res => {
+        const dest = fs.createWriteStream(localPath);
+        res.body.pipe(dest);
+    });
+}
+
+
+
 let useAPI = (APIurl, tokenEnvVarName, tokenOptionString, myIdQuery) => {
   APIspec.token = eval(`process.env.${tokenEnvVarName}`);
   APIspec.tokenName = tokenOptionString;
