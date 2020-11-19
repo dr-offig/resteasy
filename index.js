@@ -79,5 +79,6 @@ module.exports = {
   useAPI: useAPI,
   loadSpec: loadSpec,
   getMyId: getMyId,
+  saveStream: saveStream,
   get: get
 };
