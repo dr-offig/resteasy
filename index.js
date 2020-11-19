@@ -32,7 +32,7 @@ let get = (path, action=console.log, extraHeaders={}) => {
 }
 
 
-let saveStream = (path, localPath, extraHeaders={}) => {
+let saveStream = (path, localPath, completionHandler=console.log, extraHeaders={}) => {
     if (APIspec.baseUrl === undefined) {
       console.log("You need to specify an API (and probably a token) using the loadSpec function.");
       return;
@@ -49,12 +49,12 @@ let saveStream = (path, localPath, extraHeaders={}) => {
     console.log(options);
 
   fetch(url, options)
-  .then(res => {
+    .then(res => {
         const dest = fs.createWriteStream(localPath);
         res.body.pipe(dest);
-    });
+    })
+    .then(result => { completionHandler(result); })
 }
-
 
 
 let useAPI = (APIurl, tokenEnvVarName, tokenOptionString, myIdQuery) => {
