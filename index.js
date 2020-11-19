@@ -1,5 +1,6 @@
 const fetch = require("node-fetch");
-const utils = require("./utils.js")
+const utils = require("./utils.js");
+const fs = require('fs');
 
 let APIspec = {
   "token" : undefined,
